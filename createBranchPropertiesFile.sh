@@ -18,7 +18,7 @@ ProcessTagLine()
         line=$1
         line=${line%%\\n}
         # delete the longest match of / from the string
-        line=",${line##/}"
+        line=",${line#tags/}"
         branchList+=$line
 }
 
@@ -54,5 +54,5 @@ do
     fi
 done < ${JOB_NAME}temp.txt
 
-echo " this is my $tag list"
+echo " this is my $tag list $branchList"
 echo $branchList >> ${JENKINS_HOME}/jobs/${JOB_NAME}/Branches.properties
