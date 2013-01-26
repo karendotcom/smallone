@@ -1,6 +1,7 @@
 # this is used to create the list to select from branches or tags it creates a properties   file /r sucks
 JOB_NAME=$1
 JENKINS_HOME=$2
+echo "hello"
 branchList="Branches="
 
 ProcessBranchLine()
