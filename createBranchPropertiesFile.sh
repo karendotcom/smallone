@@ -50,7 +50,14 @@ do
 		# I am taking them all
     if [[ $line == * ]]; then
 
-        ProcessTagLine $line             
+    	# here I would put in the tag discrimination, for tags they don't want to see
+		  # I am taking them all
+		  echo THIS IS THE LINE $line
+      #line=${line%%\\n}
+      # delete the longest match of / from the string
+      line=",${line#*tags/}"
+      echo this is the new line $line
+      branchList+=$line		          
     fi
 done < ${JOB_NAME}temp.txt
 
