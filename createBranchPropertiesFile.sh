@@ -46,11 +46,15 @@ while read line
 do
 		# here I would put in the tag discrimination, for tags they don't want to see
 		# I am taking them all
-    if [[ $line == * ]]; then
-
-        ProcessTagLine $line             
-    fi
-done < ${JOB_NAME}temp.txt
+		echo THIS IS THE LINE $line
+        #line=${line%%\\n}
+        # delete the longest match of / from the string
+        line=",${line#*tags/}"
+        echo this is the new line $line
+        branchList+=$line		
+		
+    #    ProcessTagLine $line             
+done < ./out.txt
 
 echo " this is my $branchList"
-echo $branchList > ${JENKINS_HOME}/jobs/${JOB_NAME}/Branches.properties
+echo $branchList >> ${JENKINS_HOME}/jobs/${JOB_NAME}/Branches.properties
