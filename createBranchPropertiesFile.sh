@@ -1,4 +1,4 @@
-# this is used to create the list to select from branches or tags it creates a properties file
+# this is used to create the list to select from branches or tags it creates a properties   file /r sucks
 JOB_NAME=$1
 branchList="Branches="
 
