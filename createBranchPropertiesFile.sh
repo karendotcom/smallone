@@ -1,6 +1,6 @@
 # this is used to create the list to select from branches or tags it creates a properties file
 JOB_NAME=$1
-branchList=Branches=
+branchList="Branches="
 
 ProcessBranchLine()
 {
