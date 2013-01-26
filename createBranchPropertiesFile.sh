@@ -54,5 +54,5 @@ do
     fi
 done < ${JOB_NAME}temp.txt
 
-echo " this is my $branchList"
-echo $branchList > ${JENKINS_HOME}/jobs/${JOB_NAME}/Branches.properties
+echo " this is my $tag list"
+echo $branchList >> ${JENKINS_HOME}/jobs/${JOB_NAME}/Branches.properties
